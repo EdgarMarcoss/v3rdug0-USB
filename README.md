@@ -24,6 +24,8 @@ Detalles:
 
 -No hay que compilar ningún programa ni nada, todo a base de scripts
 
+-Obviamente hace falta ponerte a la escucha en tu máquina atacante por el puerto que le indiques
+
 Créditos:
 ----
 -laZagne

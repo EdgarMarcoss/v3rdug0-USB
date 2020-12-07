@@ -18,7 +18,7 @@ Detalles:
 ----
 -Para efectuar la reverse shell, obviamente tenéis que poner vuestra ip en el archivo powershell dónde esta configurada la reverse shell
 
--Los archivos maliiciosos se pegarana en la variable de entorno TEMP para así poder quitar el USB y seguir teniendo conexión.
+-Los archivos maliiciosos se pegarán en la variable de entorno TEMP para así poder quitar el USB y seguir teniendo conexión.
 
 -Para los permisos de administrador solo hace falta una pequeña interacción por vuestra parte, darle a que sí en permitir cambios en el dispositivo.
 

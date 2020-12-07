@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: winacl
+Version: 0.0.7
+Summary: ACL/ACE/Security Descriptor manipulation library in pure Python
+Home-page: https://github.com/skelsec/winacl
+Author: Tamas Jos
+Author-email: skelsecprojects@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+
+UNKNOWN
+
+

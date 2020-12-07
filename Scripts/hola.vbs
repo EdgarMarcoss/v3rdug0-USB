@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "hola.bat",0,True

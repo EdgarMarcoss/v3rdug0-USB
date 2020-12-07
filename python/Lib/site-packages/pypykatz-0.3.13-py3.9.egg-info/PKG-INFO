@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: pypykatz
+Version: 0.3.13
+Summary: Python implementation of Mimikatz
+Home-page: https://github.com/skelsec/pypykatz
+Author: Tamas Jos
+Author-email: skelsecprojects@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6

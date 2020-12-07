@@ -1,0 +1,3 @@
+[console_scripts]
+pypykatz = pypykatz.__main__:main
+

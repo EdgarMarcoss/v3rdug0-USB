@@ -14,9 +14,6 @@ Requisitos:
 
 -Instalar los requisitos del requirements.txt del laZagne
 
-Apunte a añadir:
-----
-Saltará el aviso del defender, pero windows está tan roto que no le hace nada al archivo y deja seguir el script y la ejecución del binario, y luego en el AV no aparece como amenaza
 
 Detalles:
 ----
@@ -24,9 +21,7 @@ Detalles:
 
 -Los archivos maliiciosos se pegarán en la variable de entorno TEMP para así poder quitar el USB y seguir teniendo conexión.
 
--Esta actualización trae un ejecutable que he compilado del código de 0xyg3n para hacer un bypass de UAC
-
--Para los permisos de administrador no hace falta nada, el bypass de UAC funciona perfectamente de momento.
+-Para los permisos de administrador no hace falta nada, el bypass de UAC funciona perfectamente.
 
 -No hay que compilar ningún programa ni nada, todo a base de scripts
 
@@ -37,8 +32,6 @@ Créditos:
 -laZagne
 
 -HelloWorld
-
--0xyg3n
 
 AV Testeados:
 ----

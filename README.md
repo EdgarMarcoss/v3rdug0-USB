@@ -35,3 +35,7 @@ Créditos:
 -HelloWorld
 
 -0xyg3n
+
+AV Testeados:
+----
+-Probado en Avast y en Defender sin problemas, no he podido testearlo en más pero en otros AV lo que podría detectarlo sería el lazagne, podríais quitar el password grabber, pero la reverse shell con bypass AMSI y UAC debería funcionar, podéis dejar los resultados por aquí

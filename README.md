@@ -27,6 +27,8 @@ Detalles:
 
 -Obviamente hace falta ponerte a la escucha en tu máquina atacante por el puerto que le indiques
 
+-El bypass de UAC es el bypass a través de variable de entorno por las scheduled tasks de windows
+
 Créditos:
 ----
 -laZagne

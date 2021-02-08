@@ -14,6 +14,10 @@ Requisitos:
 
 -Instalar los requisitos del requirements.txt del laZagne
 
+Apunte a añadir:
+----
+Saltará el aviso del defender, pero windows está tan roto que no le hace nada al archivo y deja seguir el script y la ejecución del binario, y luego en el AV no aparece como amenaza
+
 Detalles:
 ----
 -Para efectuar la reverse shell, obviamente tenéis que poner vuestra ip en el archivo powershell dónde esta configurada la reverse shell
@@ -39,3 +43,5 @@ Créditos:
 AV Testeados:
 ----
 -Probado en Avast y en Defender sin problemas, no he podido testearlo en más pero en otros AV lo que podría detectarlo sería el lazagne, podríais quitar el password grabber, pero la reverse shell con bypass AMSI y UAC debería funcionar, podéis dejar los resultados por aquí
+
+

